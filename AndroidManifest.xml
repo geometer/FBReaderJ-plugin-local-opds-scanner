@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.geometerplus.fbreader.plugin.local_opds_scanner" android:versionCode="10000" android:versionName="1.0" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="11"/>
+	<supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:anyDensity="true" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+	<uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+	<application android:label="@string/title" android:icon="@drawable/fbreader_plugin">
+		<activity android:name=".TestActivity" android:theme="@android:style/Theme.NoDisplay">
+			<intent-filter>
+				<action android:name="android.fbreader.action.ADD_OPDS_CATALOG" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:scheme="http" android:host="data.fbreader.org" android:path="/add_catalog"/>
+			</intent-filter>
+		</activity>
+		<activity android:name=".ScanLocalNetworkActivity" android:theme="@android:style/Theme.Dialog" android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<action android:name="android.fbreader.action.ADD_OPDS_CATALOG" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:host="data.fbreader.org" android:scheme="http" android:path="/add_catalog/scanLocalNetwork"/>
+			</intent-filter>
+		</activity>
+	</application>
+</manifest>
