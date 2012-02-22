@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="title">FBReader local OPDS scanner</string>
+	<string name="scan_local_network_menu_item">Cauta in reteaua locala</string>
+	<string name="window_title">Cataloage OPDS localte</string>
+	<string name="no_catalogs_found">Ne pare rau, nu s-a gasit niciun catalog</string>
+	<string name="no_local_connection">Dispozitivul dumneavoastra nu este conectat la o retea locala</string>
+	<string name="wifi_is_turned_off">WiFi-ul este inchis</string>
+	<string name="turn_wifi_on">Va rugam porniti WiFi si reincercati</string>
+	<string name="scanning_local_network">Se scaneaza reteaua locala.Va rugam asteptati&#8230;</string>
+	<string name="button_cancel">Anuleaza</string>
+	<string name="button_rescan">Rescaneaza</string>
+	<string name="button_turn_on">Porneste</string>
+</resources>

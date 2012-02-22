@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="title">FBReader: поиск локальных библиотек</string>
+	<string name="scan_local_network_menu_item">Поискать в локальной сети</string>
+	<string name="window_title">Локальные библиотеки</string>
+	<string name="no_catalogs_found">Не нашлось ни одного каталога</string>
+	<string name="no_local_connection">Устройство не подключено к локальной сети</string>
+	<string name="wifi_is_turned_off">WiFi выключен</string>
+	<string name="turn_wifi_on">Включите WiFi и попробуйте ещё раз</string>
+	<string name="scanning_local_network">Ищем в локальной сети. Подождите, пожалуйста&#8230;</string>
+	<string name="button_cancel">Отменить</string>
+	<string name="button_rescan">Искать</string>
+	<string name="button_turn_on">Включить</string>
 </resources>
