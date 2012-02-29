@@ -26,6 +26,10 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.client.methods.HttpHead;
+
 import android.app.ListActivity;
 import android.content.*;
 import android.graphics.Color;
@@ -208,29 +212,47 @@ public class ScanLocalNetworkActivity extends ListActivity {
 				return;
 			}
 
-			final String[] urls = info.getURLs();
-			if (urls.length != 1) {
-				return;
-			}
-
-			if (urls[0] == null || !urls[0].endsWith(path)) {
-				return;
-			}
-
-			final String type = info.getType();
-			if (STANZA_ZEROCONF_TYPE.equals(info.getType()) || "/stanza".equals(path)) {
-				urls[0] = urls[0].substring(0, urls[0].length() - path.length()) + "/opds";
-			}
-
-			runOnUiThread(new Runnable() {
-				public void run() {
-					getListAdapter().addServiceItem(
-						info.getName(),
-						urls[0],
-						R.drawable.ic_list_library_calibre
-					);
+			for (String url : info.getURLs()) {
+				if (url == null || !url.endsWith(path)) {
+					continue;
 				}
-			});
+
+				final String type = info.getType();
+				if (STANZA_ZEROCONF_TYPE.equals(info.getType()) || "/stanza".equals(path)) {
+					url = url.substring(0, url.length() - path.length()) + "/opds";
+				}
+
+				System.err.println("verifying " + url);
+				boolean verified = false;
+				final DefaultHttpClient httpClient = new DefaultHttpClient();
+				final HttpHead httpRequest = new HttpHead(url);
+				httpRequest.setHeader("Accept-Language", Locale.getDefault().getLanguage());
+				for (int retryCounter = 0; retryCounter < 3; ++retryCounter) {
+					try {
+						final HttpResponse response = httpClient.execute(httpRequest);
+						if (response.getStatusLine().getStatusCode() == HttpURLConnection.HTTP_OK) {
+							verified = true;
+							break;
+						}
+						System.err.println("status code = " + response.getStatusLine().getStatusCode());
+					} catch (IOException e) {
+					}
+				}
+				System.err.println("verified = " + verified);
+
+				if (verified) {
+					final String serviceUrl = url;
+					runOnUiThread(new Runnable() {
+						public void run() {
+							getListAdapter().addServiceItem(
+								info.getName(),
+								serviceUrl,
+								R.drawable.ic_list_library_calibre
+							);
+						}
+					});
+				}
+			}
 		}
 	}
 
