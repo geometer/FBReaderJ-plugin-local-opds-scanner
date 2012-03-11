@@ -49,7 +49,7 @@ public class ScanLocalNetworkActivity extends ListActivity {
 
 		setListAdapter(new ItemAdapter());
 
-		setTitle(R.string.window_title);
+		setTitle(R.string.scan_local_network_window_title);
 
 		final View buttonView = findViewById(R.id.scan_local_network_buttons);
 

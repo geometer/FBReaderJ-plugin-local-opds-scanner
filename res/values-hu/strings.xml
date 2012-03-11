@@ -2,7 +2,7 @@
 <resources>
 	<string name="title">FBReader local OPDS scanner</string>
 	<string name="scan_local_network_menu_item">Helyi hálózat vizsgálata</string>
-	<string name="window_title">Helyi OPDS katalógusok</string>
+	<string name="scan_local_network_window_title">Helyi OPDS katalógusok</string>
 	<string name="no_catalogs_found">Nem található katalógus</string>
 	<string name="no_local_connection">A készülék nem csatlakozik helyi hálózathoz</string>
 	<string name="wifi_is_turned_off">A wifi nincs bekapcsolva</string>

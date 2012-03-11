@@ -2,7 +2,7 @@
 <resources>
 	<string name="title">FBReader: поиск локальных библиотек</string>
 	<string name="scan_local_network_menu_item">Поискать в локальной сети</string>
-	<string name="window_title">Локальные библиотеки</string>
+	<string name="scan_local_network_window_title">Локальные библиотеки</string>
 	<string name="no_catalogs_found">Не нашлось ни одного каталога</string>
 	<string name="no_local_connection">Устройство не подключено к локальной сети</string>
 	<string name="wifi_is_turned_off">WiFi выключен</string>
