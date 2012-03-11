@@ -23,9 +23,6 @@ import java.util.*;
 import java.net.*;
 import java.io.IOException;
 
-import java.lang.reflect.Method;
-import java.lang.reflect.InvocationTargetException;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.client.methods.HttpHead;
@@ -52,7 +49,7 @@ public class ScanLocalNetworkActivity extends ListActivity {
 
 		setListAdapter(new ItemAdapter());
 
-		setTitle(R.string.window_title);
+		setTitle(R.string.scan_local_network_window_title);
 
 		final View buttonView = findViewById(R.id.scan_local_network_buttons);
 
@@ -112,34 +109,6 @@ public class ScanLocalNetworkActivity extends ListActivity {
 			myLock.release();
 		}
 		super.onDestroy();
-	}
-
-	private List<InetAddress> getLocalIpAddresses() {
-		final List<InetAddress> addresses = new LinkedList<InetAddress>();
-		Method testPtoPMethod = null;
-		try {
-			testPtoPMethod = NetworkInterface.class.getMethod("isPointToPoint");
-		} catch (NoSuchMethodException e) {
-		}
-		try {
-			for (NetworkInterface iface : Collections.list(NetworkInterface.getNetworkInterfaces())) {
-				try {
-					if (testPtoPMethod != null && (Boolean)testPtoPMethod.invoke(iface)) {
-						continue;
-					}
-				} catch (IllegalAccessException e) {
-				} catch (InvocationTargetException e) {
-				}
-				for (InetAddress addr : Collections.list(iface.getInetAddresses())) {
-					if (!addr.isLoopbackAddress() && addr instanceof Inet4Address) {
-						addresses.add(addr);
-					}
-				}
-			}
-		} catch (SocketException e) {
-			e.printStackTrace();
-		}
-		return addresses;
 	}
 
 	private class ServiceCollector implements ServiceListener {
@@ -222,7 +191,6 @@ public class ScanLocalNetworkActivity extends ListActivity {
 					url = url.substring(0, url.length() - path.length()) + "/opds";
 				}
 
-				System.err.println("verifying " + url);
 				boolean verified = false;
 				final DefaultHttpClient httpClient = new DefaultHttpClient();
 				final HttpHead httpRequest = new HttpHead(url);
@@ -234,11 +202,9 @@ public class ScanLocalNetworkActivity extends ListActivity {
 							verified = true;
 							break;
 						}
-						System.err.println("status code = " + response.getStatusLine().getStatusCode());
 					} catch (IOException e) {
 					}
 				}
-				System.err.println("verified = " + verified);
 
 				if (verified) {
 					final String serviceUrl = url;
@@ -257,7 +223,7 @@ public class ScanLocalNetworkActivity extends ListActivity {
 	}
 
 	private void scan() {
-		final List<InetAddress> addresses = getLocalIpAddresses();
+		final List<InterfaceAddress> addresses = Util.getInterfaceAddresses();
 		if (addresses.isEmpty()) {
 			runOnUiThread(new Runnable() {
 				public void run() {
@@ -265,10 +231,10 @@ public class ScanLocalNetworkActivity extends ListActivity {
 				}
 			});
 		} else {
-			for (final InetAddress a : addresses) {
+			for (final InterfaceAddress a : addresses) {
 				new Thread() {
 					public void run() {
-						new ServiceCollector(a);
+						new ServiceCollector(a.getAddress());
 					}
 				}.start();
 			}

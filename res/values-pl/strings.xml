@@ -2,7 +2,7 @@
 <resources>
 	<string name="title">FBReader local OPDS scanner</string>
 	<string name="scan_local_network_menu_item">Przeszukaj sieć lokalną</string>
-	<string name="window_title">Lokalne katalogi OPDS</string>
+	<string name="scan_local_network_window_title">Lokalne katalogi OPDS</string>
 	<string name="no_catalogs_found">Niestety nie znaleziono katalogów</string>
 	<string name="no_local_connection">Twoje urządzenie nie jest podłączone do sieci lokalnej</string>
 	<string name="wifi_is_turned_off">WiFi jest wyłączone</string>

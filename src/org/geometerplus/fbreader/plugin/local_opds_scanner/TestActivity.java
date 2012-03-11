@@ -47,6 +47,11 @@ public class TestActivity extends Activity {
 				getText(R.string.scan_local_network_menu_item).toString(),
 				3
 			));
+			actions.add(new PluginApi.MenuActionInfo(
+				Uri.parse(baseUrl + "/localIP"),
+				getText(R.string.local_ip_menu_item).toString(),
+				4
+			));
 			intent.putExtra(PluginApi.PluginInfo.KEY, actions);
 			if (!startNextMatchingActivity(intent)) {
 				setResult(1, intent);
