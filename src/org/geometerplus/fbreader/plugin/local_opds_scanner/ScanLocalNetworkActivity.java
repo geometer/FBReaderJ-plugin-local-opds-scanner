@@ -23,8 +23,9 @@ import java.util.*;
 import java.net.*;
 import java.io.IOException;
 
-import java.lang.reflect.Method;
-import java.lang.reflect.InvocationTargetException;
+import org.apache.http.HttpResponse;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.client.methods.HttpHead;
 
 import android.app.ListActivity;
 import android.content.*;
@@ -112,20 +113,8 @@ public class ScanLocalNetworkActivity extends ListActivity {
 
 	private List<InetAddress> getLocalIpAddresses() {
 		final List<InetAddress> addresses = new LinkedList<InetAddress>();
-		Method testPtoPMethod = null;
-		try {
-			testPtoPMethod = NetworkInterface.class.getMethod("isPointToPoint");
-		} catch (NoSuchMethodException e) {
-		}
 		try {
 			for (NetworkInterface iface : Collections.list(NetworkInterface.getNetworkInterfaces())) {
-				try {
-					if (testPtoPMethod != null && (Boolean)testPtoPMethod.invoke(iface)) {
-						continue;
-					}
-				} catch (IllegalAccessException e) {
-				} catch (InvocationTargetException e) {
-				}
 				for (InetAddress addr : Collections.list(iface.getInetAddresses())) {
 					if (!addr.isLoopbackAddress() && addr instanceof Inet4Address) {
 						addresses.add(addr);
@@ -208,29 +197,44 @@ public class ScanLocalNetworkActivity extends ListActivity {
 				return;
 			}
 
-			final String[] urls = info.getURLs();
-			if (urls.length != 1) {
-				return;
-			}
-
-			if (urls[0] == null || !urls[0].endsWith(path)) {
-				return;
-			}
-
-			final String type = info.getType();
-			if (STANZA_ZEROCONF_TYPE.equals(info.getType()) || "/stanza".equals(path)) {
-				urls[0] = urls[0].substring(0, urls[0].length() - path.length()) + "/opds";
-			}
-
-			runOnUiThread(new Runnable() {
-				public void run() {
-					getListAdapter().addServiceItem(
-						info.getName(),
-						urls[0],
-						R.drawable.ic_list_library_calibre
-					);
+			for (String url : info.getURLs()) {
+				if (url == null || !url.endsWith(path)) {
+					continue;
 				}
-			});
+
+				final String type = info.getType();
+				if (STANZA_ZEROCONF_TYPE.equals(info.getType()) || "/stanza".equals(path)) {
+					url = url.substring(0, url.length() - path.length()) + "/opds";
+				}
+
+				boolean verified = false;
+				final DefaultHttpClient httpClient = new DefaultHttpClient();
+				final HttpHead httpRequest = new HttpHead(url);
+				httpRequest.setHeader("Accept-Language", Locale.getDefault().getLanguage());
+				for (int retryCounter = 0; retryCounter < 3; ++retryCounter) {
+					try {
+						final HttpResponse response = httpClient.execute(httpRequest);
+						if (response.getStatusLine().getStatusCode() == HttpURLConnection.HTTP_OK) {
+							verified = true;
+							break;
+						}
+					} catch (IOException e) {
+					}
+				}
+
+				if (verified) {
+					final String serviceUrl = url;
+					runOnUiThread(new Runnable() {
+						public void run() {
+							getListAdapter().addServiceItem(
+								info.getName(),
+								serviceUrl,
+								R.drawable.ic_list_library_calibre
+							);
+						}
+					});
+				}
+			}
 		}
 	}
 
