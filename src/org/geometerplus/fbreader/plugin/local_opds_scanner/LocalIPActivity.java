@@ -90,7 +90,7 @@ public class LocalIPActivity extends Activity {
 
 		final List<InterfaceAddress> addresses = Util.getInterfaceAddresses();
 		if (addresses.size() == 1) {
-			final InterfaceAddress address = addresses.get(1);
+			final InterfaceAddress address = addresses.get(0);
 			final byte[] addressBytes = address.getAddress().getAddress();
 			int len = address.getNetworkPrefixLength();
 			for (int index = 0; index < 4 && len > 0; ++index, len -= 8) {
