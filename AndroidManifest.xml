@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.geometerplus.fbreader.plugin.local_opds_scanner" android:versionCode="10100" android:versionName="1.1" android:installLocation="auto">
-	<uses-sdk android:minSdkVersion="9" android:targetSdkVersion="11"/>
-	<supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:anyDensity="true" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.geometerplus.fbreader.plugin.local_opds_scanner" android:versionCode="102000" android:versionName="1.2" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="9" android:targetSdkVersion="14"/>
+	<supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true"/>
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -14,14 +14,14 @@
 				<data android:scheme="http" android:host="data.fbreader.org" android:path="/add_catalog"/>
 			</intent-filter>
 		</activity>
-		<activity android:name=".ScanLocalNetworkActivity" android:theme="@android:style/Theme.Dialog" android:configChanges="orientation|keyboardHidden">
+		<activity android:name=".ScanLocalNetworkActivity" android:theme="@style/FBReader.Dialog" android:configChanges="orientation|keyboardHidden|screenSize">
 			<intent-filter>
 				<action android:name="android.fbreader.action.ADD_OPDS_CATALOG" />
 				<category android:name="android.intent.category.DEFAULT" />
 				<data android:host="data.fbreader.org" android:scheme="http" android:path="/add_catalog/scanLocalNetwork"/>
 			</intent-filter>
 		</activity>
-		<activity android:name=".LocalIPActivity" android:theme="@android:style/Theme.Dialog" android:configChanges="orientation|keyboardHidden">
+		<activity android:name=".LocalIPActivity" android:theme="@style/FBReader.Dialog" android:configChanges="orientation|keyboardHidden|screenSize">
 			<intent-filter>
 				<action android:name="android.fbreader.action.ADD_OPDS_CATALOG" />
 				<category android:name="android.intent.category.DEFAULT" />

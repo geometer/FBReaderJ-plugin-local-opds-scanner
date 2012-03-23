@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="title">FBReader local OPDS scanner</string>
+	<string name="title">FBReader Calibre connector</string>
 	<string name="scan_local_network_menu_item">Scan local network</string>
 	<string name="local_ip_menu_item">Enter local IP</string>
 	<string name="scan_local_network_window_title">Local OPDS catalogs</string>

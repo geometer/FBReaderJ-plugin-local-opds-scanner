@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="title">FBReader local OPDS scanner</string>
+	<string name="title">FBReader + Calibre</string>
 	<string name="scan_local_network_menu_item">Chercher sur le réseau local</string>
 	<string name="scan_local_network_window_title">Catalogues OPDS du voisinage</string>
 	<string name="no_catalogs_found">Pas de catalogue trouvé, désolé</string>

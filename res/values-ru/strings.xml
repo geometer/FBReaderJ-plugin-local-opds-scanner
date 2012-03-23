@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="title">FBReader: поиск локальных библиотек</string>
+	<string name="title">FBReader: соединение с Calibre</string>
 	<string name="scan_local_network_menu_item">Поискать в локальной сети</string>
 	<string name="local_ip_menu_item">Ввести локальный IP-адрес</string>
 	<string name="scan_local_network_window_title">Локальные библиотеки</string>
