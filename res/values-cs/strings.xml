@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="title">FBReader local OPDS scanner</string>
+	<string name="title">Připojení FBReaderu k Calibre</string>
 	<string name="scan_local_network_menu_item">Prohledat místní síť</string>
-	<string name="scan_local_network_window_title">Místní OPDS katalogy</string>
+	<string name="local_ip_menu_item">Zadejte místní IP</string>
+	<string name="scan_local_network_window_title">Místní katalogy OPDS</string>
+	<string name="local_ip_window_title">Adresa místního serveru</string>
 	<string name="no_catalogs_found">Nebyly bohužel nalezeny žádné katalogy</string>
 	<string name="no_local_connection">Vaše zařízení není připojeno k místní síti</string>
 	<string name="wifi_is_turned_off">WiFi je vypnuto</string>
 	<string name="turn_wifi_on">Zapněte WiFi a zkuste to znovu</string>
 	<string name="scanning_local_network">Prohledávání místní sítě. Čekejte&#8230;</string>
+	<string name="address_label">Adresa:</string>
+	<string name="port_label">Port:</string>
+	<string name="button_ok">OK</string>
 	<string name="button_cancel">Zrušit</string>
-	<string name="button_rescan">Znovu prohledat</string>
+	<string name="button_rescan">Prohledat znovu</string>
 	<string name="button_turn_on">Zapnout</string>
 </resources>
