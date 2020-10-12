@@ -19,8 +19,13 @@
 
 package org.geometerplus.fbreader.plugin.local_opds_scanner;
 
-import java.util.*;
-import java.net.*;
+import java.net.Inet4Address;
+import java.net.InterfaceAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 class Util {
 	static protected List<InterfaceAddress> getInterfaceAddresses() {

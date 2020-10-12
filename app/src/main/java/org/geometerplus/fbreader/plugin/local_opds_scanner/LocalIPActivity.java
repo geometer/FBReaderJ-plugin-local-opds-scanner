@@ -19,8 +19,11 @@
 
 package org.geometerplus.fbreader.plugin.local_opds_scanner;
 
-import java.util.*;
-import java.net.*;
+import java.net.InterfaceAddress;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
