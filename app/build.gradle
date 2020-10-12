@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "org.geometerplus.fbreader.plugin.local_opds_scanner"
+        minSdkVersion 27
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation files('libs/jmdns.jar')
+    implementation('com.android.volley:volley:1.1.1')
+    implementation('org.apache.httpcomponents:httpclient:4.5.13')
+    implementation('org.apache.httpcomponents:httpcore:4.4.13')
+}

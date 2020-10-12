@@ -11,4 +11,5 @@
 	<string name="button_cancel">Annuler</string>
 	<string name="button_rescan">Scanner à nouveau</string>
 	<string name="button_turn_on">Activer</string>
+    <string name="local_ip_menu_item">Enter local IP</string>
 </resources>

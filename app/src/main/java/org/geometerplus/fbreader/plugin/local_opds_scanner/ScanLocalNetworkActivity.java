@@ -61,7 +61,7 @@ public class ScanLocalNetworkActivity extends ListActivity {
 			}
 		});
 
-		final WifiManager wifiManager = (WifiManager)getSystemService(Context.WIFI_SERVICE);
+		final WifiManager wifiManager = (WifiManager)getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 		final int state = wifiManager.getWifiState();
 		if (state != WifiManager.WIFI_STATE_ENABLED && state != WifiManager.WIFI_STATE_ENABLING) {
 			setTitle(R.string.wifi_is_turned_off);

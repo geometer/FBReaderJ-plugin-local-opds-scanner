@@ -11,4 +11,5 @@
 	<string name="button_cancel">Zrušit</string>
 	<string name="button_rescan">Znovu prohledat</string>
 	<string name="button_turn_on">Zapnout</string>
+    <string name="local_ip_menu_item">Enter local IP</string>
 </resources>
