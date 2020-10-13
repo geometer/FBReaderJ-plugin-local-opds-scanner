@@ -19,11 +19,23 @@
         android:icon="@drawable/fbreader_plugin"
         android:label="@string/title">
         <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".TestActivity"
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.fbreader.action.ADD_OPDS_CATALOG" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data
                     android:host="data.fbreader.org"
                     android:path="/add_catalog"
@@ -36,7 +48,9 @@
             android:theme="@style/FBReader.Dialog">
             <intent-filter>
                 <action android:name="android.fbreader.action.ADD_OPDS_CATALOG" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data
                     android:host="data.fbreader.org"
                     android:path="/add_catalog/scanLocalNetwork"
@@ -49,7 +63,9 @@
             android:theme="@style/FBReader.Dialog">
             <intent-filter>
                 <action android:name="android.fbreader.action.ADD_OPDS_CATALOG" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data
                     android:host="data.fbreader.org"
                     android:path="/add_catalog/localIP"
@@ -57,4 +73,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="title">FBReader Calibre connector</string>
-	<string name="scan_local_network_menu_item">Scan local network</string>
-	<string name="local_ip_menu_item" translatable="false">Enter local IP</string>
-	<string name="scan_local_network_window_title">Local OPDS catalogs</string>
-	<string name="local_ip_window_title" translatable="false">Local server address</string>
-	<string name="no_catalogs_found">No catalogs found, sorry</string>
-	<string name="no_local_connection">Your device is not connected to a local network</string>
-	<string name="wifi_is_turned_off">WiFi is turned off</string>
-	<string name="turn_wifi_on">Please, turn WiFi on and try again</string>
-	<string name="scanning_local_network">Scanning local network. Please, wait&#8230;</string>
-	<string name="address_label" translatable="false">Address:</string>
-	<string name="port_label" translatable="false">Port:</string>
-	<string name="button_ok" translatable="false">Ok</string>
-	<string name="button_cancel">Cancel</string>
-	<string name="button_rescan">Rescan</string>
-	<string name="button_turn_on">Turn on</string>
+    <string name="title">FBReader Calibre connector</string>
+    <string name="scan_local_network_menu_item">Scan local network</string>
+    <string name="local_ip_menu_item" translatable="false">Enter local IP</string>
+    <string name="scan_local_network_window_title">Local OPDS catalogs</string>
+    <string name="local_ip_window_title" translatable="false">Local server address</string>
+    <string name="no_catalogs_found">No catalogs found, sorry</string>
+    <string name="no_local_connection">Your device is not connected to a local network</string>
+    <string name="wifi_is_turned_off">WiFi is turned off</string>
+    <string name="turn_wifi_on">Please, turn WiFi on and try again</string>
+    <string name="scanning_local_network">Scanning local network. Please, wait&#8230;</string>
+    <string name="address_label" translatable="false">Address:</string>
+    <string name="port_label" translatable="false">Port:</string>
+    <string name="button_ok" translatable="false">Ok</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_rescan">Rescan</string>
+    <string name="button_turn_on">Turn on</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="button_scan">Scan Local Network For Calibre</string>
+    <string name="button_local_ip">Local IP</string>
 </resources>

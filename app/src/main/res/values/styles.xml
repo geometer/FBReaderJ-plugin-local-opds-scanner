@@ -1,10 +1,23 @@
 <resources>
-  <style name="FBReader.Activity" parent="android:Theme">
-	</style>
-  <style name="FBReader.Dialog" parent="android:Theme.Dialog">
-	</style>
-	<color name="transparent">#00000000</color>
-  <style name="FBReader.Transparent" parent="android:Theme.Translucent.NoTitleBar">
-    <item name="android:windowBackground">@color/transparent</item>
-  </style>
+
+    <style name="FBReader.Activity" parent="android:Theme"></style>
+
+    <style name="FBReader.Dialog" parent="android:Theme.Dialog"></style>
+
+    <color name="transparent">#00000000</color>
+
+    <style name="FBReader.Transparent" parent="android:Theme.Translucent.NoTitleBar">
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light" />
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
