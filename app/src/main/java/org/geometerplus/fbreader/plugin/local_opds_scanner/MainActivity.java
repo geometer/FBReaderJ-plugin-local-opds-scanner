@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, ScanLocalNetworkActivity.class));
     }
 
-    public void openLocalIpActivity(View view) {
+    public void openLocanIpActivity(View view) {
         startActivity(new Intent(this, LocalIPActivity.class));
     }
 }
