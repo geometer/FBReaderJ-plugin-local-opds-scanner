@@ -26,5 +26,6 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="button_scan">Scan Local Network For Calibre</string>
-    <string name="button_local_ip">Local IP</string>
+    <string name="button_local_ip">Connect to Calibre</string>
+    <string name="button_test">Test</string>
 </resources>
