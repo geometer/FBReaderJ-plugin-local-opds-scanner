@@ -23,7 +23,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:text="@string/button_local_ip"
-            android:onClick="openLocanIpActivity"/>
+            android:onClick="openLocalIpActivity"/>
 
         <Button
             android:id="@+id/button_scan"
