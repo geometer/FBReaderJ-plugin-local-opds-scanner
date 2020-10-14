@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.geometerplus.fbreader.plugin.local_opds_scanner"
+    android:installLocation="auto">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
+    <application
+        android:icon="@drawable/fbreader_plugin"
+        android:label="@string/title">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/FBReader.Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TestActivity"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.fbreader.action.ADD_OPDS_CATALOG" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="data.fbreader.org"
+                    android:path="/add_catalog"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ScanLocalNetworkActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/FBReader.Dialog">
+            <intent-filter>
+                <action android:name="android.fbreader.action.ADD_OPDS_CATALOG" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="data.fbreader.org"
+                    android:path="/add_catalog/scanLocalNetwork"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LocalIPActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/FBReader.Dialog">
+            <intent-filter>
+                <action android:name="android.fbreader.action.ADD_OPDS_CATALOG" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="data.fbreader.org"
+                    android:path="/add_catalog/localIP"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

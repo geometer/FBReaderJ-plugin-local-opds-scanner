@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="title">FBReader + Calibre</string>
+	<string name="scan_local_network_menu_item">Chercher sur le réseau local</string>
+	<string name="scan_local_network_window_title">Catalogues OPDS du voisinage</string>
+	<string name="no_catalogs_found">Pas de catalogue trouvé, désolé</string>
+	<string name="no_local_connection">Votre périphérique n\'est pas connecté à un réseau local</string>
+	<string name="wifi_is_turned_off">Le Wi-Fi est désactivé</string>
+	<string name="turn_wifi_on">Veuillez activer le Wi-Fi et essayer à nouveau</string>
+	<string name="scanning_local_network">Recherche sur réseau local, veuillez patienter&#8230;</string>
+	<string name="button_cancel">Annuler</string>
+	<string name="button_rescan">Scanner à nouveau</string>
+	<string name="button_turn_on">Activer</string>
+    <string name="local_ip_menu_item">Enter local IP</string>
+</resources>
