@@ -1,5 +1,6 @@
 package org.geometerplus.fbreader.plugin.local_opds_scanner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,5 +25,13 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void openScanLocalNetworkActivity(View view) {
+        startActivity(new Intent(this, ScanLocalNetworkActivity.class));
+    }
+
+    public void openLocanIpActivity(View view) {
+        startActivity(new Intent(this, LocalIPActivity.class));
     }
 }

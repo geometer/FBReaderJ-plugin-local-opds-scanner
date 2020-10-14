@@ -22,7 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/button_local_ip" />
+            android:text="@string/button_local_ip"
+            android:onClick="openLocanIpActivity"/>
 
         <Button
             android:id="@+id/button_scan"
@@ -32,7 +33,8 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="288dp"
             android:text="@string/button_scan"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:onClick="openScanLocalNetworkActivity"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
