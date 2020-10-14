@@ -10,7 +10,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "org.geometerplus.fbreader.plugin.local_opds_scanner"
-        minSdkVersion 27
+        minSdkVersion 14
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
