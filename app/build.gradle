@@ -10,7 +10,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "org.geometerplus.fbreader.plugin.local_opds_scanner"
-        minSdkVersion 14
+        minSdkVersion 5
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -34,8 +34,4 @@ dependencies {
     implementation files('libs/jmdns.jar')
     implementation 'org.apache.httpcomponents:httpclient:4.5.13'
     implementation 'org.apache.httpcomponents:httpcore:4.4.13'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
-    implementation 'androidx.navigation:navigation-ui:2.3.0'
 }
